@@ -39,6 +39,26 @@ class _FavoritePokemonScreenState extends State<FavoritePokemonScreen> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               var data = snapshot.data;
+              if (data.length == 0) {
+                return Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/gif/confused-pikachu.gif',
+                        height: 150,
+                      ),
+                      Text(
+                        'No Favorite Pokemon Yet...',
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }
               return ListView.builder(
                 itemCount: data.length,
                 itemBuilder: (context, index) {

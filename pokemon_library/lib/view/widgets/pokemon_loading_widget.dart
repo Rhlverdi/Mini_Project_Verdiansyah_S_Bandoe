@@ -8,9 +8,14 @@ Widget pokemonLoading() {
       children: [
         Image.asset(
           'assets/gif/pikachu-running.gif',
-          height: 80,
+          height: 100,
         ),
-        Text('Loading...'),
+        Text(
+          'Loading...',
+          style: TextStyle(
+            fontSize: 20,
+          ),
+        ),
       ],
     ),
   );
